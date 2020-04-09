@@ -67,3 +67,34 @@ public:
     }
 };
 # 代码（参考题解）
+```
+class Solution {
+public:
+    int findShortestSubArray(vector<int>& nums) {
+      int len=nums.size(),minl=0,du=0;
+      map<int,vector<int>>um;
+      for(int i=0;i<len;i++)
+      {
+          um[nums[i]].push_back(i);
+          int size=um[nums[i]].size();
+          if(size>du)
+          {du=size;
+           minl=um[nums[i]][size-1]-um[nums[i]][0]+1;
+          }
+          if(size==du)
+          {
+              minl=min(minl,um[nums[i]][size-1]-um[nums[i]][0]+1);
+
+          }
+
+      }
+      return minl;
+    }
+};
+```
+# 笔记
+1.学习了怎样使用map，记录初始位置和其他出现位置。
+
+2.此题在一个for循环中完成了既对数组度的更新，又完成了最小长度的寻找，特别考虑到了两个数在某一个时刻度相同时，会更新长度
+
+3.解法很巧妙，在每一次压入数组时，对较长的进行更新，而不是全部输入找最长的。
