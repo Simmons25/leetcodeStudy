@@ -66,6 +66,7 @@ public:
         return min;
     }
 };
+```
 # 代码（参考题解）
 ```
 class Solution {
