@@ -80,6 +80,7 @@ nums 的长度范围为 [0, 10000]。
 任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。
 
 # 代码（时间复杂度高，超时了，看题解学会简单方法）
+```
 class Solution {
 public:
     int pivotIndex(vector<int>& nums) {
@@ -132,6 +133,7 @@ public:
         }
     }}
 };
+`
 # 代码（通过简单方法）
 ```
 class Solution {
